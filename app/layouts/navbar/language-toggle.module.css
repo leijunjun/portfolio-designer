@@ -1,0 +1,14 @@
+@layer layout {
+  .toggle {
+    --buttonFontSize: calc((14 / 16) * 1rem);
+
+    font-family: var(--fontStack);
+    font-weight: var(--fontWeightMedium);
+    letter-spacing: 0;
+    color: var(--textBody);
+
+    &[data-mobile='true'] {
+      margin-top: var(--spaceS);
+    }
+  }
+}
