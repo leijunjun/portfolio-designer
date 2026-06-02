@@ -131,6 +131,14 @@ export function ProjectSummary({
             </div>
           </>
         )}
+        {model.type === 'image' && (
+          <>
+            {renderKatakana('image', visible)}
+            <div className={styles.imageFrame} data-visible={visible}>
+              <img className={styles.image} src={model.src} alt={model.alt} />
+            </div>
+          </>
+        )}
         {model.type === 'phone' && (
           <>
             {renderKatakana('phone', visible)}

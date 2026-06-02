@@ -59,6 +59,33 @@ describe('i18n dictionary', () => {
     );
   });
 
+  it('exposes localized first project copy', () => {
+    assert.equal(getText('zh', 'home.projects')[0].title, '私域拓客，极致裂变之选');
+    assert.equal(
+      getText('zh', 'home.projects')[0].description,
+      '为连锁品牌和拓客团队定制，帮助他们快速、批量落地老带新活动'
+    );
+    assert.equal(
+      getText('en', 'home.projects')[0].title,
+      'Private-Domain Customer Acquisition, Built for Extreme Referral Growth'
+    );
+    assert.equal(getText('zh', 'projectDetails.liebianbao.name'), '一推火裂变宝');
+    assert.match(getText('zh', 'projectDetails.liebianbao.description'), /红包裂变/);
+    assert.deepEqual(getText('zh', 'projectDetails.liebianbao.tags'), [
+      '8000+场活动经验沉淀',
+      '极致老带新裂变',
+      '合作 0 成本',
+      '《客流荒》私域专著实战之作',
+    ]);
+    assert.equal(getText('en', 'projectDetails.liebianbao.name'), 'Yituihuo Liebianbao');
+    assert.match(getText('en', 'projectDetails.liebianbao.description'), /red-envelope referrals/);
+    assert.match(
+      getText('en', 'projectDetails.liebianbao.tags')[3],
+      /Customer Flow Shortage/
+    );
+    assert.equal(getText('en', 'projectDetails.liebianbao.linkLabel'), 'Visit website');
+  });
+
   it('exposes localized profile paragraphs', () => {
     assert.equal(
       getText('zh', 'home.profile.paragraphs')[0],

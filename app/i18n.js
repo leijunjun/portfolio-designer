@@ -61,11 +61,11 @@ export const translations = {
     home: {
       projects: [
         {
-          title: 'Designing the future of education',
+          title: 'Private-Domain Customer Acquisition, Built for Extreme Referral Growth',
           description:
-            'Designing a platform to help educators build better online courseware',
+            'Customized for chain brands and customer-acquisition teams, helping them launch referral campaigns quickly and at scale',
           buttonText: 'View project',
-          modelAlt: 'Smart Sparrow lesson builder',
+          modelAlt: 'Liebianbao product dashboard and mobile campaign screens',
         },
         {
           title: 'Video game progress tracking',
@@ -127,6 +127,20 @@ export const translations = {
         buttonText: 'Send me a message',
         tag: 'About me',
         imageAlt: 'Portrait of Lei Junjun in a navy suit',
+      },
+    },
+    projectDetails: {
+      liebianbao: {
+        name: 'Yituihuo Liebianbao',
+        description:
+          'Yituihuo Liebianbao is an AI-powered private-domain referral growth system for stores, serving medical aesthetics, beauty, education and training, local services, and chain locations. Through campaign mechanics such as red-envelope referrals, short-video referrals, livestream referrals, refer-two-get-one, free-with-purchase campaigns, two-level distribution, and tiered group buying, it helps stores reactivate existing customers, acquire new customers, drive campaign conversion, unify payment collection, support next-day settlement, and review performance data. It is built for brand owners, chain stores, customer-acquisition teams, and private-domain operations teams.',
+        linkLabel: 'Visit website',
+        tags: [
+          '8000+ Campaigns Distilled',
+          'Extreme Referral Growth',
+          'Zero-Cost Collaboration',
+          '"Customer Flow Shortage" Private-Domain Growth Playbook',
+        ],
       },
     },
     footer: {
@@ -282,10 +296,10 @@ export const translations = {
     home: {
       projects: [
         {
-          title: '设计未来的教育体验',
-          description: '为教育工作者设计平台，帮助他们构建更好的在线课程内容',
+          title: '私域拓客，极致裂变之选',
+          description: '为连锁品牌和拓客团队定制，帮助他们快速、批量落地老带新活动',
           buttonText: '查看项目',
-          modelAlt: 'Smart Sparrow 课程编辑器',
+          modelAlt: '裂变宝产品后台与移动端活动页面',
         },
         {
           title: '电子游戏进度追踪',
@@ -346,6 +360,20 @@ export const translations = {
         buttonText: '给我发消息',
         tag: '关于我',
         imageAlt: '雷校长身穿深色西装的肖像照',
+      },
+    },
+    projectDetails: {
+      liebianbao: {
+        name: '一推火裂变宝',
+        description:
+          '一推火裂变宝是一套门店 AI 私域裂变增长系统，主要服务医美、美业、教培、本地生活和连锁门店。它通过红包裂变、短视频裂变、直播裂变、推二返一、消费全免、二级分销和阶梯拼团等活动玩法，帮助门店激活老客户、获取新客户、实现活动成交、统一收款、次日结算和数据复盘。适合品牌方、连锁门店、拓客团队和私域运营团队使用。',
+        linkLabel: '访问网站',
+        tags: [
+          '8000+场活动经验沉淀',
+          '极致老带新裂变',
+          '合作 0 成本',
+          '《客流荒》私域专著实战之作',
+        ],
       },
     },
     footer: {

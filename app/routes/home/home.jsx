@@ -7,9 +7,7 @@ import gamestackTexture from '~/assets/gamestack-login.jpg';
 import sliceTextureLarge from '~/assets/slice-app-large.jpg';
 import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
 import sliceTexture from '~/assets/slice-app.jpg';
-import sprTextureLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
-import sprTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
-import sprTexture from '~/assets/spr-lesson-builder-dark.jpg';
+import liebianbaoPromo from '~/assets/liebianbao-promo.png';
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { DomainsSection } from './domains-section';
@@ -116,14 +114,9 @@ export const Home = () => {
         buttonText={projects[0].buttonText}
         buttonLink="/projects/smart-sparrow"
         model={{
-          type: 'laptop',
+          type: 'image',
           alt: projects[0].modelAlt,
-          textures: [
-            {
-              srcSet: `${sprTexture} 1280w, ${sprTextureLarge} 2560w`,
-              placeholder: sprTexturePlaceholder,
-            },
-          ],
+          src: liebianbaoPromo,
         }}
       />
       <ProjectSummary

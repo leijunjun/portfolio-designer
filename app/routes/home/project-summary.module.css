@@ -139,6 +139,35 @@
   }
 }
 
+.imageFrame {
+  width: min(100%, 680px);
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 36px 80px color-mix(in lab, var(--black) 30%, transparent);
+  opacity: 0;
+  transform: translate3d(0, var(--spaceL), 0) scale(0.98);
+  transition-property: opacity, transform;
+  transition-duration: var(--durationXL);
+  transition-timing-function: var(--bezierFastoutSlowin);
+  background: color-mix(in lab, var(--backgroundLight) 72%, transparent);
+
+  &[data-visible='true'] {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (--mediaTablet) {
+    width: min(100%, 560px);
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .loader {
   opacity: 0;
   transition: opacity 400ms ease 1000ms;
@@ -185,6 +214,20 @@
     @media (--mediaTablet) {
       width: 80%;
       bottom: 23%;
+    }
+  }
+
+  &[data-device='image'] {
+    position: absolute;
+    width: 84%;
+    right: -20%;
+    bottom: 8%;
+    transform: translateY(50%);
+
+    @media (--mediaTablet) {
+      width: 64%;
+      right: -8%;
+      bottom: 4%;
     }
   }
 }
