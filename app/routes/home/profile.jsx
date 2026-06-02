@@ -1,12 +1,9 @@
-import profileImgLarge from '~/assets/profile-large.jpg';
-import profileImgPlaceholder from '~/assets/profile-placeholder.jpg';
-import profileImg from '~/assets/profile.jpg';
+import profileImg from '~/assets/lei.jpg';
 import { Button } from '~/components/button';
 import { DecoderText } from '~/components/decoder-text';
 import { Divider } from '~/components/divider';
 import { Heading } from '~/components/heading';
 import { Image } from '~/components/image';
-import { Link } from '~/components/link';
 import { Section } from '~/components/section';
 import { Text } from '~/components/text';
 import { Transition } from '~/components/transition';
@@ -25,18 +22,17 @@ const ProfileText = ({ visible, titleId }) => {
       <Heading className={styles.title} data-visible={visible} level={3} id={titleId}>
         <DecoderText text={profile.title} start={visible} delay={500} />
       </Heading>
-      <Text className={styles.description} data-visible={visible} size="l" as="p">
-        {profile.paragraphOneStart}
-        <Link href="https://www.qwilr.com">Qwilr</Link>
-        {profile.paragraphOneMiddle}
-        <Link href="/uses">{profile.usesLink}</Link>
-        {profile.paragraphOneEnd}
-      </Text>
-      <Text className={styles.description} data-visible={visible} size="l" as="p">
-        {profile.paragraphTwoStart}
-        <Link href="/projects/volkihar-knight">{profile.modsLink}</Link>
-        {profile.paragraphTwoEnd}
-      </Text>
+      {profile.paragraphs.map(paragraph => (
+        <Text
+          className={styles.description}
+          data-visible={visible}
+          size="l"
+          as="p"
+          key={paragraph}
+        >
+          {paragraph}
+        </Text>
+      ))}
     </Fragment>
   );
 };
@@ -61,7 +57,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
       <Transition in={visible || focused} timeout={0}>
         {({ visible, nodeRef }) => (
           <div className={styles.content} ref={nodeRef}>
-            <div className={styles.column}>
+            <div className={`${styles.column} ${styles.textColumn}`}>
               <ProfileText visible={visible} titleId={titleId} />
               <Button
                 secondary
@@ -73,7 +69,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                 {profile.buttonText}
               </Button>
             </div>
-            <div className={styles.column}>
+            <div className={`${styles.column} ${styles.visualColumn}`}>
               <div className={styles.tag} aria-hidden>
                 <Divider
                   notchWidth="64px"
@@ -89,10 +85,11 @@ export const Profile = ({ id, visible, sectionRef }) => {
                 <Image
                   reveal
                   delay={100}
-                  placeholder={profileImgPlaceholder}
-                  srcSet={`${profileImg} 480w, ${profileImgLarge} 960w`}
-                  width={960}
-                  height={1280}
+                  className={styles.portrait}
+                  placeholder={profileImg}
+                  src={profileImg}
+                  width={751}
+                  height={751}
                   sizes={`(max-width: ${media.mobile}px) 100vw, 480px`}
                   alt={profile.imageAlt}
                 />

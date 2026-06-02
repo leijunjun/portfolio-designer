@@ -44,12 +44,12 @@ export const translations = {
       contact: 'Contact',
     },
     intro: {
-      name: 'I’m Lei Junjun, known as Principal Lei',
+      name: 'known as Principal Lei',
       role: 'AI Product Manager',
       disciplines: [
-        'Retail Marketing Consultant',
-        'Private-Domain Fission Growth Officer',
-        'Full-Stack Indie Developer',
+        'Local Store Marketing',
+        'Private Domain Referral Growth',
+        'Full-Stack Development',
       ],
     },
     home: {
@@ -77,21 +77,17 @@ export const translations = {
         },
       ],
       profile: {
-        title: 'Hi there',
-        paragraphOneStart:
-          'I’m Hamish, currently I live in Sydney working as a senior product designer at ',
-        paragraphOneMiddle:
-          '. My projects include UX design, UI animations, and icon illustration. Being comfortable with code allows me to rapidly prototype and validate experiences. If you’re interested in the tools and software I use check out my ',
-        usesLink: 'uses page',
-        paragraphOneEnd: '.',
-        paragraphTwoStart:
-          'In my spare time I like to practice Brazilian Jiu Jitsu, play video games, and ',
-        modsLink: 'make mods',
-        paragraphTwoEnd:
-          '. I’m always down for hearing about new projects, so feel free to drop me a line.',
+        title: 'About',
+        paragraphs: [
+          'I’m Lei Junjun, a product manager who has moved from software services into hands-on AI application building.',
+          'One question has stayed at the center of my work for a long time: how can AI genuinely help brick-and-mortar businesses?',
+          'Not by stopping at a few lines of copy or a few generated images, but by becoming part of the full chain of store operations, private-domain growth, campaign conversion, and team training.',
+          'Drawing on years of experience serving physical stores and customer-acquisition teams, I’m building a product portfolio around AI-powered private-domain fission growth.',
+          'I believe the AI products that create real long-term value will not be the ones that merely demonstrate capability, but the ones that fit into industry scenarios, solve specific problems, and produce measurable outcomes.',
+        ],
         buttonText: 'Send me a message',
         tag: 'About me',
-        imageAlt: 'Me smiling like a goofball at the Qwilr office in Sydney',
+        imageAlt: 'Portrait of Lei Junjun in a navy suit',
       },
     },
     footer: {
@@ -235,9 +231,9 @@ export const translations = {
       contact: '联系',
     },
     intro: {
-      name: '我是雷钧钧，网名雷校长',
+      name: 'HI我是雷钧钧，网名雷校长',
       role: 'AI产品经理',
-      disciplines: ['门店营销顾问', '私域裂变增长官', '全栈独立开发者'],
+      disciplines: ['门店营销', '私域裂变增长', '全栈开发'],
     },
     home: {
       projects: [
@@ -261,20 +257,19 @@ export const translations = {
         },
       ],
       profile: {
-        title: '你好',
-        paragraphOneStart:
-          '我是 Hamish，目前住在悉尼，在 ',
-        paragraphOneMiddle:
-          ' 担任高级产品设计师。我的项目涵盖 UX 设计、UI 动效和图标插画。熟悉代码让我能快速制作原型并验证体验。如果你想了解我使用的工具和软件，可以看看我的',
-        usesLink: '工具页面',
-        paragraphOneEnd: '。',
-        paragraphTwoStart:
-          '业余时间我喜欢练巴西柔术、玩电子游戏，也会',
-        modsLink: '制作游戏模组',
-        paragraphTwoEnd: '。我一直很乐意听听新的项目想法，欢迎随时联系。',
+        title: '关于',
+        paragraphs: [
+          'HI我是雷钧钧，网名雷校长',
+          '一名从软件服务走向 AI 应用实践的产品经理。',
+          '长期关注一个问题：',
+          'AI 到底怎样才能真正帮到实体商家？',
+          '不是停留在写几句文案、做几张图片，而是进入门店经营、私域增长、活动成交和团队训练的完整链路。',
+          '基于多年服务实体门店和拓客团队的经验，我正在围绕“AI 私域裂变增长”打造一套产品矩阵。',
+          '我相信，未来真正有价值的 AI 产品，一定是能嵌入行业场景，解决具体问题，创造真实结果。',
+        ],
         buttonText: '给我发消息',
         tag: '关于我',
-        imageAlt: '我在悉尼 Qwilr 办公室微笑的照片',
+        imageAlt: '雷校长身穿深色西装的肖像照',
       },
     },
     footer: {

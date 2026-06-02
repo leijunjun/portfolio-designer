@@ -60,4 +60,17 @@ describe('i18n dictionary', () => {
       'Lei Junjun | Principal Lei | AI Product Manager Private-Domain Fission Growth Officer'
     );
   });
+
+  it('exposes localized profile paragraphs', () => {
+    assert.equal(
+      getText('zh', 'home.profile.paragraphs')[0],
+      '我是雷钧钧，一名从软件服务走向 AI 应用实践的产品经理。'
+    );
+    assert.equal(
+      getText('zh', 'home.profile.paragraphs')[4],
+      '漫可贴，让营销内容更有画面感；裂变宝，让老带新活动更容易成交；销冠复制官，让优秀销售经验可以被训练和复制。'
+    );
+    assert.match(getText('en', 'home.profile.paragraphs')[1], /brick-and-mortar businesses/);
+    assert.match(getText('en', 'home.profile.paragraphs')[4], /Manketie/);
+  });
 });

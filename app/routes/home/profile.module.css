@@ -36,14 +36,16 @@
 
 .content {
   display: grid;
-  grid-template-columns: 1fr 50%;
-  grid-column-gap: var(--space2XL);
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 420px);
+  column-gap: clamp(var(--spaceXL), 5vw, var(--space4XL));
+  align-items: start;
   max-width: var(--maxWidthL);
   width: 100%;
 
   @media (--mediaTablet) {
-    max-width: 600px;
+    max-width: 680px;
     grid-template-columns: 100%;
+    row-gap: var(--space2XL);
   }
 }
 
@@ -57,7 +59,6 @@
 }
 
 .title {
-  white-space: nowrap;
   margin-bottom: var(--spaceL);
   opacity: 0;
   transition: opacity var(--durationXL) ease var(--durationM);
@@ -68,25 +69,49 @@
 }
 
 .description {
-  margin-bottom: var(--spaceXL);
+  margin-bottom: var(--spaceL);
+  max-width: 62ch;
+  line-height: 1.82;
   opacity: 0;
   transition: opacity var(--durationXL) ease var(--durationL);
 
   &[data-visible='true'] {
     opacity: 1;
   }
+
+  & + & {
+    margin-top: 0;
+  }
+
+  &:last-of-type {
+    margin-bottom: var(--space2XL);
+  }
+}
+
+.textColumn {
+  max-width: 720px;
+}
+
+.visualColumn {
+  justify-self: end;
+  width: min(100%, 420px);
+
+  @media (--mediaTablet) {
+    justify-self: start;
+    width: min(100%, 500px);
+  }
 }
 
 .tag {
-  margin-top: 220px;
-  margin-bottom: 40px;
+  margin-top: 8px;
+  margin-bottom: var(--spaceL);
   display: grid;
   grid-template-columns: var(--space4XL) 1fr;
   gap: 12px;
   align-items: center;
 
   @media (--mediaTablet) {
-    margin-top: 30px;
+    margin-top: 0;
   }
 }
 
@@ -114,6 +139,28 @@
 .image {
   position: relative;
   width: 100%;
+  max-width: 420px;
+
+  @media (--mediaTablet) {
+    max-width: 500px;
+  }
+}
+
+.portrait {
+  overflow: hidden;
+  border-radius: 28px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 86% 88% at 50% 46%,
+    #000 62%,
+    rgb(0 0 0 / 0.88) 78%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 86% 88% at 50% 46%,
+    #000 62%,
+    rgb(0 0 0 / 0.88) 78%,
+    transparent 100%
+  );
 }
 
 .svg {
@@ -133,6 +180,7 @@
 }
 
 .button {
+  margin-top: var(--spaceM);
   opacity: 0;
   transition: opacity var(--durationXL) ease var(--durationL);
 
