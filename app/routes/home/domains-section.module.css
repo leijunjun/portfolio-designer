@@ -1,0 +1,130 @@
+.domains {
+  width: 100vw;
+  padding-top: var(--space4XL);
+  padding-bottom: var(--space5XL);
+  display: flex;
+  justify-content: center;
+
+  @media (--mediaTablet) {
+    padding-top: var(--space3XL);
+    padding-bottom: var(--space4XL);
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+  column-gap: clamp(var(--spaceXL), 5vw, var(--space4XL));
+  align-items: start;
+  max-width: var(--maxWidthL);
+  width: 100%;
+
+  @media (--mediaTablet) {
+    max-width: 680px;
+    grid-template-columns: 100%;
+    row-gap: var(--space2XL);
+  }
+}
+
+.column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.textColumn {
+  max-width: 700px;
+}
+
+.listColumn {
+  justify-self: end;
+  width: min(100%, 420px);
+
+  @media (--mediaTablet) {
+    justify-self: start;
+    width: 100%;
+  }
+}
+
+.title,
+.description,
+.button,
+.tagText,
+.card {
+  opacity: 0;
+  transition: opacity var(--durationXL) ease var(--durationL);
+}
+
+.title {
+  margin-bottom: var(--spaceL);
+
+  &[data-visible='true'] {
+    opacity: 1;
+  }
+}
+
+.description {
+  max-width: 60ch;
+  line-height: 1.82;
+  margin-bottom: var(--space2XL);
+
+  &[data-visible='true'] {
+    opacity: 1;
+  }
+}
+
+.button {
+  &[data-visible='true'] {
+    opacity: 1;
+  }
+}
+
+.tag {
+  margin-top: 8px;
+  margin-bottom: var(--spaceL);
+  display: grid;
+  grid-template-columns: var(--space4XL) 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.tagText {
+  font-size: var(--fontSizeBodyS);
+  font-weight: var(--fontWeightMedium);
+  color: var(--primary);
+
+  &[data-visible='true'] {
+    opacity: 1;
+  }
+}
+
+.cards {
+  width: 100%;
+  display: grid;
+  gap: var(--spaceL);
+}
+
+.card {
+  padding: var(--spaceL);
+  border: 1px solid color-mix(in lab, var(--text) 10%, transparent);
+  background: color-mix(in lab, var(--backgroundLight) 86%, transparent);
+  border-radius: 18px;
+  box-shadow: 0 18px 40px color-mix(in lab, var(--black) 8%, transparent);
+
+  &[data-visible='true'] {
+    opacity: 1;
+  }
+}
+
+.status {
+  margin-bottom: var(--spaceS);
+}
+
+.cardTitle {
+  margin-bottom: var(--spaceS);
+}
+
+.cardDescription {
+  line-height: 1.7;
+}

@@ -1,5 +1,4 @@
 import { Icon } from '~/components/icon';
-import { Monogram } from '~/components/monogram';
 import { useTheme } from '~/components/theme-provider';
 import { tokens } from '~/components/theme-provider/theme';
 import { Transition } from '~/components/transition';
@@ -12,7 +11,7 @@ import { NavToggle } from './nav-toggle';
 import { ThemeToggle } from './theme-toggle';
 import { navLinks, socialLinks } from './nav-data';
 import { useI18n } from '~/i18n-context.jsx';
-import config from '~/config.json';
+import logoImage from '~/assets/logo.png';
 import styles from './navbar.module.css';
 
 export const Navbar = () => {
@@ -153,7 +152,13 @@ export const Navbar = () => {
         aria-label={`${t('intro.name')}, ${t('intro.role')}`}
         onClick={handleMobileNavClick}
       >
-        <Monogram highlight />
+        <img
+          src={logoImage}
+          alt=""
+          className={styles.logoImage}
+          width="1254"
+          height="1254"
+        />
       </RouterLink>
       <NavToggle onClick={() => setMenuOpen(!menuOpen)} menuOpen={menuOpen} />
       <nav className={styles.nav}>
@@ -215,18 +220,30 @@ export const Navbar = () => {
 
 const NavbarIcons = ({ desktop }) => (
   <div className={styles.navIcons}>
-    {socialLinks.map(({ label, url, icon }) => (
-      <a
-        key={label}
-        data-navbar-item={desktop || undefined}
-        className={styles.navIconLink}
-        aria-label={label}
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Icon className={styles.navIcon} icon={icon} />
-      </a>
-    ))}
+    {socialLinks.map(({ label, url, icon }) =>
+      url ? (
+        <a
+          key={label}
+          data-navbar-item={desktop || undefined}
+          className={styles.navIconLink}
+          aria-label={label}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon className={styles.navIcon} icon={icon} />
+        </a>
+      ) : (
+        <span
+          key={label}
+          data-navbar-item={desktop || undefined}
+          className={styles.navIconLink}
+          data-disabled
+          aria-hidden="true"
+        >
+          <Icon className={styles.navIcon} icon={icon} />
+        </span>
+      )
+    )}
   </div>
 );

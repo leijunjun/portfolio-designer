@@ -27,6 +27,11 @@ export const translations = {
         description:
           'Send me a message if you’re interested in discussing a project or if you just want to say hi',
       },
+      domains: {
+        title: 'Domain Investments',
+        description:
+          'Every domain I collect points to a niche business scenario that could be reimagined by AI.',
+      },
       uses: {
         title: 'Uses',
         description: 'A list of hardware and software I use to do my thing',
@@ -39,6 +44,7 @@ export const translations = {
     },
     nav: {
       projects: 'Projects',
+      domains: 'Domains',
       details: 'Details',
       articles: 'Articles',
       contact: 'Contact',
@@ -76,6 +82,39 @@ export const translations = {
           modelAlt: 'Annotating a biomedical image in the Slice app',
         },
       ],
+      domains: {
+        title: 'Domain Investments',
+        description:
+          'Every domain I collect points to a niche business scenario that could be reimagined by AI.',
+        buttonText: 'View domains page',
+        tag: 'Collected domains',
+        items: [
+          {
+            name: 'gongchang.ai',
+            status: 'Smart Factory',
+            description:
+              'A domain focused on intelligent factory scenarios, from digital operations to AI-assisted manufacturing workflows.',
+          },
+          {
+            name: 'bookoff.cn',
+            status: 'Discount Book Ecommerce',
+            description:
+              'A domain for a book discount ecommerce concept, where AI could improve merchandising, pricing, and conversion.',
+          },
+          {
+            name: 'chedada.cn',
+            status: 'Automotive Platform / Community',
+            description:
+              'A domain aimed at an automotive platform or enthusiast community with room for AI-driven content, matching, and services.',
+          },
+          {
+            name: 'gotools.io',
+            status: 'Global Tools Directory',
+            description:
+              'A domain for an overseas tools site, suitable for curating software, workflows, and AI utility products for a global audience.',
+          },
+        ],
+      },
       profile: {
         title: 'About',
         paragraphs: [
@@ -215,6 +254,10 @@ export const translations = {
         title: '联系',
         description: '如果你想聊聊项目，或只是想打个招呼，可以给我发消息。',
       },
+      domains: {
+        title: '域名投资',
+        description: '每一个被收藏的域名，背后都对应着一个可能被 AI 重构的细分业务场景。',
+      },
       uses: {
         title: '工具',
         description: '我日常用于设计和开发的硬件、软件与工具清单。',
@@ -226,12 +269,13 @@ export const translations = {
     },
     nav: {
       projects: '项目',
+      domains: '域名',
       details: '关于',
       articles: '文章',
       contact: '联系',
     },
     intro: {
-      name: 'HI我是雷钧钧，网名雷校长',
+      name: 'HI,我是雷校长',
       role: 'AI产品经理',
       disciplines: ['门店营销', '私域裂变增长', '全栈开发'],
     },
@@ -256,6 +300,38 @@ export const translations = {
           modelAlt: '在 Slice 应用中标注生物医学图像',
         },
       ],
+      domains: {
+        title: '域名投资',
+        description:
+          '每一个被收藏的域名，背后都对应着一个可能被 AI 重构的细分业务场景。',
+        buttonText: '查看域名页',
+        tag: '收藏域名',
+        items: [
+          {
+            name: 'gongchang.ai',
+            status: '智能工厂',
+            description: '聚焦智能工厂场景，适合承载从数字化运营到 AI 辅助生产协同的一整套业务想象。',
+          },
+          {
+            name: 'bookoff.cn',
+            status: '图书折扣电商站',
+            description:
+              '面向图书折扣电商业务，未来可以结合 AI 做选品、定价、推荐与转化优化。',
+          },
+          {
+            name: 'chedada.cn',
+            status: '汽车类平台/社区',
+            description:
+              '适合承载汽车平台或垂直社区产品，具备结合 AI 做内容分发、用户匹配和服务连接的空间。',
+          },
+          {
+            name: 'gotools.io',
+            status: '海外工具站',
+            description:
+              '适合面向海外用户的工具站点，用来组织软件工具、工作流产品和 AI 应用导航。',
+          },
+        ],
+      },
       profile: {
         title: '关于',
         paragraphs: [

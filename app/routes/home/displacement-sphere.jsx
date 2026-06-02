@@ -2,7 +2,7 @@ import { useTheme } from '~/components/theme-provider';
 import { Transition } from '~/components/transition';
 import { useReducedMotion, useSpring } from 'framer-motion';
 import { useInViewport, useWindowSize } from '~/hooks';
-import { startTransition, useEffect, useRef } from 'react';
+import { startTransition, useEffect, useRef, useState } from 'react';
 import {
   AmbientLight,
   DirectionalLight,
@@ -47,45 +47,52 @@ export const DisplacementSphere = props => {
   const windowSize = useWindowSize();
   const rotationX = useSpring(0, springConfig);
   const rotationY = useSpring(0, springConfig);
+  const [isSupported, setIsSupported] = useState(true);
 
   useEffect(() => {
+    if (!canvasRef.current) return;
+
     const { innerWidth, innerHeight } = window;
-    mouse.current = new Vector2(0.8, 0.5);
-    renderer.current = new WebGLRenderer({
-      canvas: canvasRef.current,
-      antialias: false,
-      alpha: true,
-      powerPreference: 'high-performance',
-      failIfMajorPerformanceCaveat: true,
-    });
-    renderer.current.setSize(innerWidth, innerHeight);
-    renderer.current.setPixelRatio(1);
-    renderer.current.outputColorSpace = LinearSRGBColorSpace;
+    try {
+      mouse.current = new Vector2(0.8, 0.5);
+      renderer.current = new WebGLRenderer({
+        canvas: canvasRef.current,
+        antialias: false,
+        alpha: true,
+        powerPreference: 'high-performance',
+      });
+      renderer.current.setSize(innerWidth, innerHeight);
+      renderer.current.setPixelRatio(1);
+      renderer.current.outputColorSpace = LinearSRGBColorSpace;
 
-    camera.current = new PerspectiveCamera(54, innerWidth / innerHeight, 0.1, 100);
-    camera.current.position.z = 52;
+      camera.current = new PerspectiveCamera(54, innerWidth / innerHeight, 0.1, 100);
+      camera.current.position.z = 52;
 
-    scene.current = new Scene();
+      scene.current = new Scene();
 
-    material.current = new MeshPhongMaterial();
-    material.current.onBeforeCompile = shader => {
-      uniforms.current = UniformsUtils.merge([
-        shader.uniforms,
-        { time: { type: 'f', value: 0 } },
-      ]);
+      material.current = new MeshPhongMaterial();
+      material.current.onBeforeCompile = shader => {
+        uniforms.current = UniformsUtils.merge([
+          shader.uniforms,
+          { time: { type: 'f', value: 0 } },
+        ]);
 
-      shader.uniforms = uniforms.current;
-      shader.vertexShader = vertexShader;
-      shader.fragmentShader = fragmentShader;
-    };
+        shader.uniforms = uniforms.current;
+        shader.vertexShader = vertexShader;
+        shader.fragmentShader = fragmentShader;
+      };
 
-    startTransition(() => {
-      geometry.current = new SphereGeometry(32, 128, 128);
-      sphere.current = new Mesh(geometry.current, material.current);
-      sphere.current.position.z = 0;
-      sphere.current.modifier = Math.random();
-      scene.current.add(sphere.current);
-    });
+      startTransition(() => {
+        geometry.current = new SphereGeometry(32, 128, 128);
+        sphere.current = new Mesh(geometry.current, material.current);
+        sphere.current.position.z = 0;
+        sphere.current.modifier = Math.random();
+        scene.current.add(sphere.current);
+      });
+    } catch (error) {
+      console.warn('DisplacementSphere disabled:', error);
+      setIsSupported(false);
+    }
 
     return () => {
       cleanScene(scene.current);
@@ -94,6 +101,8 @@ export const DisplacementSphere = props => {
   }, []);
 
   useEffect(() => {
+    if (!isSupported || !scene.current) return;
+
     const dirLight = new DirectionalLight(0xffffff, theme === 'light' ? 1.8 : 2.0);
     const ambientLight = new AmbientLight(0xffffff, theme === 'light' ? 2.7 : 0.4);
 
@@ -107,9 +116,11 @@ export const DisplacementSphere = props => {
     return () => {
       removeLights(lights.current);
     };
-  }, [theme]);
+  }, [isSupported, theme]);
 
   useEffect(() => {
+    if (!isSupported || !renderer.current || !camera.current || !sphere.current) return;
+
     const { width, height } = windowSize;
 
     const adjustedHeight = height + height * 0.3;
@@ -132,7 +143,7 @@ export const DisplacementSphere = props => {
       sphere.current.position.x = 22;
       sphere.current.position.y = 16;
     }
-  }, [reduceMotion, windowSize]);
+  }, [isSupported, reduceMotion, windowSize]);
 
   useEffect(() => {
     const onMouseMove = throttle(event => {
@@ -145,6 +156,8 @@ export const DisplacementSphere = props => {
       rotationY.set(position.x / 2);
     }, 100);
 
+    if (!isSupported) return;
+
     if (!reduceMotion && isInViewport) {
       window.addEventListener('mousemove', onMouseMove);
     }
@@ -152,9 +165,11 @@ export const DisplacementSphere = props => {
     return () => {
       window.removeEventListener('mousemove', onMouseMove);
     };
-  }, [isInViewport, reduceMotion, rotationX, rotationY]);
+  }, [isSupported, isInViewport, reduceMotion, rotationX, rotationY]);
 
   useEffect(() => {
+    if (!isSupported || !renderer.current || !camera.current || !sphere.current) return;
+
     let animation;
 
     const animate = () => {
@@ -180,7 +195,11 @@ export const DisplacementSphere = props => {
     return () => {
       cancelAnimationFrame(animation);
     };
-  }, [isInViewport, reduceMotion, rotationX, rotationY]);
+  }, [isSupported, isInViewport, reduceMotion, rotationX, rotationY]);
+
+  if (!isSupported) {
+    return null;
+  }
 
   return (
     <Transition in timeout={3000} nodeRef={canvasRef}>

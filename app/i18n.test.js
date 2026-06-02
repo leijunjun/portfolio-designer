@@ -28,25 +28,23 @@ describe('i18n dictionary', () => {
     assert.deepEqual(languages, ['en', 'zh']);
     assert.equal(getText('zh', 'nav.contact'), '联系');
     assert.equal(getText('en', 'nav.contact'), 'Contact');
+    assert.equal(getText('zh', 'nav.domains'), '域名');
+    assert.equal(getText('en', 'nav.domains'), 'Domains');
   });
 
   it('exposes the Chinese homepage identity copy', () => {
-    assert.equal(getText('zh', 'intro.name'), '我是雷钧钧，网名雷校长');
+    assert.equal(getText('zh', 'intro.name'), 'HI,我是雷校长');
     assert.equal(getText('zh', 'intro.role'), 'AI产品经理');
-    assert.deepEqual(getText('zh', 'intro.disciplines'), [
-      '门店营销顾问',
-      '私域裂变增长官',
-      '全栈独立开发者',
-    ]);
+    assert.deepEqual(getText('zh', 'intro.disciplines'), ['门店营销', '私域裂变增长', '全栈开发']);
   });
 
   it('exposes the English homepage identity copy', () => {
-    assert.equal(getText('en', 'intro.name'), 'I’m Lei Junjun, known as Principal Lei');
+    assert.equal(getText('en', 'intro.name'), 'known as Principal Lei');
     assert.equal(getText('en', 'intro.role'), 'AI Product Manager');
     assert.deepEqual(getText('en', 'intro.disciplines'), [
-      'Retail Marketing Consultant',
-      'Private-Domain Fission Growth Officer',
-      'Full-Stack Indie Developer',
+      'Local Store Marketing',
+      'Private Domain Referral Growth',
+      'Full-Stack Development',
     ]);
   });
 
@@ -64,13 +62,24 @@ describe('i18n dictionary', () => {
   it('exposes localized profile paragraphs', () => {
     assert.equal(
       getText('zh', 'home.profile.paragraphs')[0],
-      '我是雷钧钧，一名从软件服务走向 AI 应用实践的产品经理。'
+      'HI我是雷钧钧，网名雷校长'
     );
     assert.equal(
-      getText('zh', 'home.profile.paragraphs')[4],
-      '漫可贴，让营销内容更有画面感；裂变宝，让老带新活动更容易成交；销冠复制官，让优秀销售经验可以被训练和复制。'
+      getText('zh', 'home.profile.paragraphs')[5],
+      '基于多年服务实体门店和拓客团队的经验，我正在围绕“AI 私域裂变增长”打造一套产品矩阵。'
     );
     assert.match(getText('en', 'home.profile.paragraphs')[1], /brick-and-mortar businesses/);
-    assert.match(getText('en', 'home.profile.paragraphs')[4], /Manketie/);
+    assert.match(getText('en', 'home.profile.paragraphs')[4], /real long-term value/);
+  });
+
+  it('exposes localized domains content', () => {
+    assert.equal(getText('zh', 'home.domains.title'), '域名投资');
+    assert.equal(getText('en', 'home.domains.title'), 'Domain Investments');
+    assert.equal(getText('zh', 'home.domains.items')[0].name, 'gongchang.ai');
+    assert.equal(getText('zh', 'home.domains.items')[3].status, '海外工具站');
+    assert.equal(getText('en', 'home.domains.items')[1].status, 'Discount Book Ecommerce');
+    assert.equal(getText('en', 'home.domains.items')[3].name, 'gotools.io');
+    assert.equal(getText('zh', 'meta.domains.title'), '域名投资');
+    assert.equal(getText('en', 'meta.domains.title'), 'Domain Investments');
   });
 });

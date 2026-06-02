@@ -8,22 +8,37 @@ and graphic assets behind this site humanstxt.org.
 
 _______________________________________________________________________________
 
-DESIGNER | デザイナー
+CREATOR | 创作者
 
-Hamish Williams
-Hand crafted design & web development
+Lei Junjun | 雷钧钧
+Also known as Principal Lei | 网名：雷校长
+AI Product Manager | AI 产品经理
+Retail Marketing Consultant | 门店营销顾问
+Private-Domain Fission Growth Officer | 私域裂变增长官
+AI Indie Builder | AI 独立开发者
+
+I build products around AI-powered private-domain growth for real-world businesses.
+我正在围绕 AI 私域裂变增长，为实体商家打造真正可落地的产品。
+
+I focus on turning AI into concrete business workflows:
+我关注的是把 AI 变成真正能落地的经营链路：
+
+- visual marketing content | 更有画面感的营销内容
+- referral campaign conversion | 更易成交的老带新活动
+- sales training replication | 可训练、可复制的销售经验
 
 Design tools:
 Figma
 Photoshop
 Blender
 
-twitter.com/hamishmw
-github.com/hamishmw
+www.leijunjun.com
+github.com/leijunjun
+github.com/leijunjun/portfolio-designer
 
 _______________________________________________________________________________
 
-TECHNOLOGY | テクノロジー
+TECHNOLOGY | 技术栈
 
 React
 Remix
@@ -32,7 +47,7 @@ Framer Motion
 
 _______________________________________________________________________________
 
-FONTS | フォント
+FONTS | 字体
 
 Gotham
 IPA Gothic Regular

@@ -1,0 +1,52 @@
+.domains {
+  min-height: 100vh;
+}
+
+.section {
+  padding-bottom: var(--space5XL);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+  gap: var(--space3XL);
+
+  @media (--mediaTablet) {
+    grid-template-columns: 100%;
+    gap: var(--space2XL);
+  }
+}
+
+.intro {
+  max-width: 320px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spaceL);
+
+  @media (--mediaTablet) {
+    grid-template-columns: 100%;
+  }
+}
+
+.card {
+  padding: var(--spaceXL);
+  border-radius: 22px;
+  border: 1px solid color-mix(in lab, var(--text) 10%, transparent);
+  background: color-mix(in lab, var(--backgroundLight) 92%, transparent);
+  box-shadow: 0 24px 48px color-mix(in lab, var(--black) 8%, transparent);
+}
+
+.status {
+  margin-bottom: var(--spaceS);
+}
+
+.cardTitle {
+  margin-bottom: var(--spaceM);
+}
+
+.cardDescription {
+  line-height: 1.72;
+}

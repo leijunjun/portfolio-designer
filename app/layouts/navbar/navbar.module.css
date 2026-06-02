@@ -28,10 +28,42 @@
     display: flex;
     position: relative;
     padding: var(--spaceS) var(--spaceS) var(--spaceL);
+    align-items: center;
+    justify-content: center;
     z-index: var(--zIndex2);
 
     @media (--mediaMobile) {
       padding-bottom: var(--spaceS);
+    }
+  }
+
+  .logoImage {
+    display: block;
+    width: 34px;
+    aspect-ratio: 1;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 50%;
+    -webkit-mask-image: radial-gradient(
+      circle at center,
+      #000 68%,
+      rgb(0 0 0 / 0.96) 80%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(
+      circle at center,
+      #000 68%,
+      rgb(0 0 0 / 0.96) 80%,
+      transparent 100%
+    );
+    filter: saturate(0.92) contrast(1.05) brightness(0.98);
+    box-shadow: 0 0 0 1px color-mix(in lab, var(--text) 10%, transparent),
+      0 8px 18px color-mix(in lab, var(--black) 18%, transparent);
+
+    @media (--mediaMobile) {
+      width: 30px;
     }
   }
 
@@ -128,6 +160,13 @@
     &:hover,
     &:active {
       color: var(--accent);
+    }
+
+    &[data-disabled='true'] {
+      color: var(--textLight);
+      opacity: 0.38;
+      cursor: default;
+      pointer-events: none;
     }
   }
 
