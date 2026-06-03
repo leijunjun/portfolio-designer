@@ -47,6 +47,13 @@
   margin-bottom: var(--spaceM);
 }
 
+.registeredAt {
+  display: block;
+  margin-bottom: var(--spaceM);
+  color: var(--primary);
+  letter-spacing: 0.02em;
+}
+
 .cardDescription {
   line-height: 1.72;
 }

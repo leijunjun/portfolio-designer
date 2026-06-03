@@ -8,7 +8,8 @@ import { useTheme } from '~/components/theme-provider';
 import { Transition } from '~/components/transition';
 import { Loader } from '~/components/loader';
 import { useWindowSize } from '~/hooks';
-import { Suspense, lazy, useState } from 'react';
+import { useReducedMotion } from 'framer-motion';
+import { Suspense, lazy, useRef, useState } from 'react';
 import { cssProps, media } from '~/utils/style';
 import { useHydrated } from '~/hooks/useHydrated';
 import katakana from './katakana.svg';
@@ -134,9 +135,11 @@ export function ProjectSummary({
         {model.type === 'image' && (
           <>
             {renderKatakana('image', visible)}
-            <div className={styles.imageFrame} data-visible={visible}>
-              <img className={styles.image} src={model.src} alt={model.alt} />
-            </div>
+            <InteractiveImagePreview
+              visible={visible}
+              model={model}
+              onLoad={handleModelLoad}
+            />
           </>
         )}
         {model.type === 'phone' && (
@@ -217,5 +220,50 @@ export function ProjectSummary({
         </Transition>
       </div>
     </Section>
+  );
+}
+
+function InteractiveImagePreview({ visible, model, onLoad }) {
+  const animationFrame = useRef();
+  const reduceMotion = useReducedMotion();
+
+  const resetImageMotion = frame => {
+    cancelAnimationFrame(animationFrame.current);
+    frame.style.removeProperty('--imageRotateX');
+    frame.style.removeProperty('--imageRotateY');
+    frame.style.removeProperty('--imageTranslateX');
+    frame.style.removeProperty('--imageTranslateY');
+  };
+
+  const handlePointerMove = event => {
+    if (!visible || reduceMotion) return;
+
+    const frame = event.currentTarget;
+    const rect = frame.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+    cancelAnimationFrame(animationFrame.current);
+
+    animationFrame.current = requestAnimationFrame(() => {
+      frame.style.setProperty('--imageRotateX', `${y * -10}deg`);
+      frame.style.setProperty('--imageRotateY', `${x * 10}deg`);
+      frame.style.setProperty('--imageTranslateX', `${x * 18}px`);
+      frame.style.setProperty('--imageTranslateY', `${y * 18}px`);
+    });
+  };
+
+  return (
+    <div className={styles.imageStage}>
+      <div
+        className={styles.imageFrame}
+        data-visible={visible}
+        data-interactive={!reduceMotion}
+        onPointerMove={handlePointerMove}
+        onPointerLeave={event => resetImageMotion(event.currentTarget)}
+      >
+        <img className={styles.image} src={model.src} alt={model.alt} onLoad={onLoad} />
+      </div>
+    </div>
   );
 }

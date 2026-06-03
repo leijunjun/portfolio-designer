@@ -1,15 +1,15 @@
 export const navLinks = [
   {
+    labelKey: 'nav.details',
+    pathname: '/#details',
+  },
+  {
     labelKey: 'nav.projects',
     pathname: '/#project-1',
   },
   {
     labelKey: 'nav.domains',
     pathname: '/#domains',
-  },
-  {
-    labelKey: 'nav.details',
-    pathname: '/#details',
   },
   {
     labelKey: 'nav.articles',

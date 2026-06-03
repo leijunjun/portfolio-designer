@@ -18,19 +18,19 @@ export const translations = {
     meta: {
       home: {
         title:
-          'Lei Junjun | Principal Lei | AI Product Manager Private-Domain Fission Growth Officer',
+          'Lei Junjun | AI Product Manager for Store Growth and Private-Domain AI',
         description:
-          'Personal site of Lei Junjun, focused on retail marketing, private-domain fission growth, and independent AI app development.',
+          'Lei Junjun builds AI products for physical stores, private-domain referral growth, campaign conversion, and sales-team training.',
       },
       contact: {
-        title: 'Contact',
+        title: 'Contact Lei Junjun | AI Training, Product Consulting and Business Collaboration',
         description:
-          'Send me a message if you’re interested in discussing a project or if you just want to say hi',
+          'Contact Lei Junjun for AI training, private-domain growth consulting, product strategy, and business collaboration for store-focused AI applications.',
       },
       domains: {
-        title: 'Domain Investments',
+        title: 'Domain Investments | AI Business Domains Collected by Lei Junjun',
         description:
-          'Every domain I collect points to a niche business scenario that could be reimagined by AI.',
+          'A bilingual collection of AI-ready domains including gongchang.ai, bookoff.cn, chedada.cn, and gotools.io, mapped to future niche business scenarios.',
       },
       uses: {
         title: 'Uses',
@@ -43,9 +43,9 @@ export const translations = {
       },
     },
     nav: {
-      projects: 'Projects',
+      projects: 'Works',
       domains: 'Domains',
-      details: 'Details',
+      details: 'About',
       articles: 'Articles',
       contact: 'Contact',
     },
@@ -61,18 +61,18 @@ export const translations = {
     home: {
       projects: [
         {
-          title: 'Private-Domain Customer Acquisition, Built for Extreme Referral Growth',
+          title: 'Private-Domain Referral Growth',
           description:
-            'Customized for chain brands and customer-acquisition teams, helping them launch referral campaigns quickly and at scale',
+            'A mini-program system tailored for chain brands and customer-acquisition teams, helping them launch referral campaigns quickly and at scale.',
           buttonText: 'View project',
           modelAlt: 'Liebianbao product dashboard and mobile campaign screens',
         },
         {
-          title: 'Video game progress tracking',
+          title: 'Advertising Comics',
           description:
-            'Design and development for a video game tracking app built in React Native',
-          buttonText: 'View website',
-          modelAlt: 'App login screen',
+            'Creating more engaging, shareable, and conversion-ready comic posters for local stores and knowledge workers, making every message more expressive.',
+          buttonText: 'View project',
+          modelAlt: 'Advertising comic project preview',
         },
         {
           title: 'Biomedical image collaboration',
@@ -88,22 +88,26 @@ export const translations = {
           'Every domain I collect points to a niche business scenario that could be reimagined by AI.',
         buttonText: 'View domains page',
         tag: 'Collected domains',
+        registeredLabel: 'Registered',
         items: [
           {
             name: 'gongchang.ai',
             status: 'Smart Factory',
+            registeredAt: '2017',
             description:
               'A domain focused on intelligent factory scenarios, from digital operations to AI-assisted manufacturing workflows.',
           },
           {
             name: 'bookoff.cn',
             status: 'Discount Book Ecommerce',
+            registeredAt: '2021',
             description:
               'A domain for a book discount ecommerce concept, where AI could improve merchandising, pricing, and conversion.',
           },
           {
             name: 'chedada.cn',
             status: 'Automotive Platform / Community',
+            registeredAt: '2013',
             description:
               'A domain aimed at an automotive platform or enthusiast community with room for AI-driven content, matching, and services.',
           },
@@ -132,6 +136,9 @@ export const translations = {
     projectDetails: {
       liebianbao: {
         name: 'Yituihuo Liebianbao',
+        seoTitle: 'Yituihuo Liebianbao | AI Private-Domain Referral Growth System',
+        seoDescription:
+          'Yituihuo Liebianbao helps chain stores and customer-acquisition teams launch referral, red-envelope, short-video, livestream, distribution, and group-buying campaigns.',
         description:
           'Yituihuo Liebianbao is an AI-powered private-domain referral growth system for stores, serving medical aesthetics, beauty, education and training, local services, and chain locations. Through campaign mechanics such as red-envelope referrals, short-video referrals, livestream referrals, refer-two-get-one, free-with-purchase campaigns, two-level distribution, and tiered group buying, it helps stores reactivate existing customers, acquire new customers, drive campaign conversion, unify payment collection, support next-day settlement, and review performance data. It is built for brand owners, chain stores, customer-acquisition teams, and private-domain operations teams.',
         linkLabel: 'Visit website',
@@ -142,12 +149,33 @@ export const translations = {
           '"Customer Flow Shortage" Private-Domain Growth Playbook',
         ],
       },
+      adComic: {
+        name: 'Manketie',
+        seoTitle: 'Manketie | AI Advertising Comics for Stores and Knowledge Workers',
+        seoDescription:
+          'Manketie turns product messages, service offers, and professional ideas into shareable advertising comics with comic-avatar creation and stronger conversion potential.',
+        description:
+          'Manketie is a content creation system for local stores and knowledge workers. It supports comic-avatar creation and turns product messages, service offers, and professional ideas into advertising comics that are more engaging, easier to share, and stronger at converting attention into action.',
+        linkLabel: 'View project',
+        url: '/contact',
+        tags: ['Comic Posters', 'Store Marketing', 'Knowledge Workers', 'Conversion Content'],
+      },
     },
     footer: {
       crafted: 'Crafted by yours truly',
     },
     contact: {
       title: 'Say hello',
+      intro: {
+        title: ['Got an idea?', "Let's talk."],
+        description:
+          'AI training, business partnerships, and product consulting are all welcome. Tell me what you are trying to build or solve.',
+        note: 'No idle chit-chat or generic networking invitations, please.',
+        methods: [
+          { label: 'Email', value: 'leijunjun@gmail.com' },
+          { label: 'Wechat', value: 'rssf1982' },
+        ],
+      },
       honeypotLabel: 'Name',
       emailLabel: 'Your email',
       messageLabel: 'Message',
@@ -262,15 +290,17 @@ export const translations = {
       home: {
         title: '雷钧钧 ｜ 雷校长 ｜ AI 产品经理 私域裂变增长官',
         description:
-          '雷钧钧的个人站点，聚焦门店营销、私域裂变增长和 AI 应用独立开发。',
+          '雷钧钧，网名雷校长，专注门店 AI 应用、私域裂变增长、活动成交和销售团队训练，打造面向实体商家的 AI 产品矩阵。',
       },
       contact: {
-        title: '联系',
-        description: '如果你想聊聊项目，或只是想打个招呼，可以给我发消息。',
+        title: '联系雷钧钧｜AI 培训、产品咨询与商业合作',
+        description:
+          '联系雷钧钧，沟通 AI 培训、私域裂变增长咨询、产品策略、门店营销和实体商家 AI 应用落地合作。',
       },
       domains: {
-        title: '域名投资',
-        description: '每一个被收藏的域名，背后都对应着一个可能被 AI 重构的细分业务场景。',
+        title: '域名投资｜雷钧钧收藏的 AI 业务域名',
+        description:
+          '雷钧钧收藏的 AI 业务域名清单，包括 gongchang.ai、bookoff.cn、chedada.cn、gotools.io，对应智能工厂、图书电商、汽车社区和海外工具站等场景。',
       },
       uses: {
         title: '工具',
@@ -282,7 +312,7 @@ export const translations = {
       },
     },
     nav: {
-      projects: '项目',
+      projects: '作品',
       domains: '域名',
       details: '关于',
       articles: '文章',
@@ -296,16 +326,18 @@ export const translations = {
     home: {
       projects: [
         {
-          title: '私域拓客，极致裂变之选',
-          description: '为连锁品牌和拓客团队定制，帮助他们快速、批量落地老带新活动',
+          title: '私域裂变拓客',
+          description:
+            '为连锁品牌和拓客团队量身定制的小程序系统，帮助他们快速、批量落地老带新拓客活动。',
           buttonText: '查看项目',
           modelAlt: '裂变宝产品后台与移动端活动页面',
         },
         {
-          title: '电子游戏进度追踪',
-          description: '一款使用 React Native 构建的游戏追踪应用的设计与开发',
-          buttonText: '访问网站',
-          modelAlt: '应用登录界面',
+          title: '广告漫画',
+          description:
+            '为门店、知识工作者创作更具吸引力、更易传播、转化能力更强的漫画海报，让表达更精彩！',
+          buttonText: '查看项目',
+          modelAlt: '广告漫画项目预览图',
         },
         {
           title: '生物医学图像协作',
@@ -320,21 +352,25 @@ export const translations = {
           '每一个被收藏的域名，背后都对应着一个可能被 AI 重构的细分业务场景。',
         buttonText: '查看域名页',
         tag: '收藏域名',
+        registeredLabel: '注册时间',
         items: [
           {
             name: 'gongchang.ai',
             status: '智能工厂',
+            registeredAt: '2017 年',
             description: '聚焦智能工厂场景，适合承载从数字化运营到 AI 辅助生产协同的一整套业务想象。',
           },
           {
             name: 'bookoff.cn',
             status: '图书折扣电商站',
+            registeredAt: '2021 年',
             description:
               '面向图书折扣电商业务，未来可以结合 AI 做选品、定价、推荐与转化优化。',
           },
           {
             name: 'chedada.cn',
             status: '汽车类平台/社区',
+            registeredAt: '2013 年',
             description:
               '适合承载汽车平台或垂直社区产品，具备结合 AI 做内容分发、用户匹配和服务连接的空间。',
           },
@@ -365,6 +401,9 @@ export const translations = {
     projectDetails: {
       liebianbao: {
         name: '一推火裂变宝',
+        seoTitle: '一推火裂变宝｜门店 AI 私域裂变增长系统',
+        seoDescription:
+          '一推火裂变宝服务连锁门店、品牌方和拓客团队，支持红包裂变、短视频裂变、直播裂变、二级分销和阶梯拼团等老带新活动。',
         description:
           '一推火裂变宝是一套门店 AI 私域裂变增长系统，主要服务医美、美业、教培、本地生活和连锁门店。它通过红包裂变、短视频裂变、直播裂变、推二返一、消费全免、二级分销和阶梯拼团等活动玩法，帮助门店激活老客户、获取新客户、实现活动成交、统一收款、次日结算和数据复盘。适合品牌方、连锁门店、拓客团队和私域运营团队使用。',
         linkLabel: '访问网站',
@@ -375,12 +414,32 @@ export const translations = {
           '《客流荒》私域专著实战之作',
         ],
       },
+      adComic: {
+        name: '漫可贴',
+        seoTitle: '漫可贴｜面向门店和知识工作者的 AI 广告漫画系统',
+        seoDescription:
+          '漫可贴支持漫画分身创作，把产品卖点、服务活动和专业观点转化为更吸引人、更易传播、更强转化的广告漫画。',
+        description:
+          '漫可贴是面向门店和知识工作者的内容创作系统，支持漫画分身创作，把产品卖点、服务活动和专业观点转化为更有吸引力、更易传播、转化能力更强的广告漫画，让表达更精彩。',
+        linkLabel: '查看项目',
+        url: '/contact',
+        tags: ['漫画海报', '门店营销', '知识工作者', '高转化内容'],
+      },
     },
     footer: {
       crafted: '由本人亲手制作',
     },
     contact: {
       title: '打个招呼',
+      intro: {
+        title: ['有想法?', '聊聊吧。'],
+        description: 'AI 培训、商业合作、产品咨询，欢迎写信说明你的具体需求。',
+        note: '恕不接受闲聊与单纯交友邀请。',
+        methods: [
+          { label: 'Email', value: 'leijunjun@gmail.com' },
+          { label: 'Wechat', value: 'rssf1982' },
+        ],
+      },
       honeypotLabel: '姓名',
       emailLabel: '你的邮箱',
       messageLabel: '消息内容',

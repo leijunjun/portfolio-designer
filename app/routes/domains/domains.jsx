@@ -52,6 +52,11 @@ export const Domains = () => {
                   <Heading className={styles.cardTitle} level={4} as="h2">
                     {item.name}
                   </Heading>
+                  {item.registeredAt && (
+                    <Text className={styles.registeredAt} size="s" weight="medium">
+                      {domains.registeredLabel}：{item.registeredAt}
+                    </Text>
+                  )}
                   <Text className={styles.cardDescription} size="m" as="p">
                     {item.description}
                   </Text>

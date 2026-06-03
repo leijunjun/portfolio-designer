@@ -30,8 +30,8 @@ export const meta = ({ matches }) => {
   const details = getText(language, 'projectDetails.liebianbao') || fallbackDetails;
 
   return baseMeta({
-    title: details.name,
-    description: details.description,
+    title: details.seoTitle || details.name,
+    description: details.seoDescription || details.description,
     prefix: 'Projects',
   });
 };

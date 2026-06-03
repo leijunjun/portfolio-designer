@@ -126,133 +126,156 @@ export const Contact = () => {
 
   return (
     <Section className={styles.contact}>
-      <Transition unmount in={!actionData?.success} timeout={1600}>
-        {({ status, nodeRef }) => (
-          <Form
-            unstable_viewTransition
-            className={styles.form}
-            method="post"
-            ref={nodeRef}
-          >
-            <Heading
-              className={styles.title}
-              data-status={status}
-              level={3}
-              as="h1"
-              style={getDelay(tokens.base.durationXS, initDelay, 0.3)}
-            >
-              <DecoderText text={text.title} start={status !== 'exited'} delay={300} />
-            </Heading>
-            <Divider
-              className={styles.divider}
-              data-status={status}
-              style={getDelay(tokens.base.durationXS, initDelay, 0.4)}
-            />
-            {/* Hidden honeypot field to identify bots */}
-            <Input
-              className={styles.botkiller}
-              label={text.honeypotLabel}
-              name="name"
-              maxLength={MAX_EMAIL_LENGTH}
-            />
-            <Input
-              required
-              className={styles.input}
-              data-status={status}
-              style={getDelay(tokens.base.durationXS, initDelay)}
-              autoComplete="email"
-              label={text.emailLabel}
-              type="email"
-              name="email"
-              maxLength={MAX_EMAIL_LENGTH}
-              {...email}
-            />
-            <Input
-              required
-              multiline
-              className={styles.input}
-              data-status={status}
-              style={getDelay(tokens.base.durationS, initDelay)}
-              autoComplete="off"
-              label={text.messageLabel}
-              name="message"
-              maxLength={MAX_MESSAGE_LENGTH}
-              {...message}
-            />
-            <Transition
-              unmount
-              in={!sending && actionData?.errors}
-              timeout={msToNum(tokens.base.durationM)}
-            >
-              {({ status: errorStatus, nodeRef }) => (
-                <div
-                  className={styles.formError}
-                  ref={nodeRef}
-                  data-status={errorStatus}
-                  style={cssProps({
-                    height: errorStatus ? errorRef.current?.offsetHeight : 0,
-                  })}
+      <div className={styles.layout}>
+        <aside className={styles.intro} aria-labelledby="contact-intro-title">
+          <p className={styles.kicker}>Contact</p>
+          <h1 className={styles.introTitle} id="contact-intro-title">
+            <span>{text.intro.title[0]}</span>
+            <span>{text.intro.title[1]}</span>
+          </h1>
+          <Text className={styles.introDescription} as="p" size="l">
+            {text.intro.description}
+          </Text>
+          <p className={styles.introNote}>{text.intro.note}</p>
+          <dl className={styles.methods}>
+            {text.intro.methods.map(method => (
+              <div className={styles.method} key={method.label}>
+                <dt>{method.label}</dt>
+                <dd>{method.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </aside>
+        <div className={styles.formColumn}>
+          <Transition unmount in={!actionData?.success} timeout={1600}>
+            {({ status, nodeRef }) => (
+              <Form
+                unstable_viewTransition
+                className={styles.form}
+                method="post"
+                ref={nodeRef}
+              >
+                <Heading
+                  className={styles.title}
+                  data-status={status}
+                  level={3}
+                  as="h2"
+                  style={getDelay(tokens.base.durationXS, initDelay, 0.3)}
                 >
-                  <div className={styles.formErrorContent} ref={errorRef}>
-                    <div className={styles.formErrorMessage}>
-                      <Icon className={styles.formErrorIcon} icon="error" />
-                      {actionData?.errors?.email}
-                      {actionData?.errors?.message}
+                  <DecoderText text={text.title} start={status !== 'exited'} delay={300} />
+                </Heading>
+                <Divider
+                  className={styles.divider}
+                  data-status={status}
+                  style={getDelay(tokens.base.durationXS, initDelay, 0.4)}
+                />
+                {/* Hidden honeypot field to identify bots */}
+                <Input
+                  className={styles.botkiller}
+                  label={text.honeypotLabel}
+                  name="name"
+                  maxLength={MAX_EMAIL_LENGTH}
+                />
+                <Input
+                  required
+                  className={styles.input}
+                  data-status={status}
+                  style={getDelay(tokens.base.durationXS, initDelay)}
+                  autoComplete="email"
+                  label={text.emailLabel}
+                  type="email"
+                  name="email"
+                  maxLength={MAX_EMAIL_LENGTH}
+                  {...email}
+                />
+                <Input
+                  required
+                  multiline
+                  className={styles.input}
+                  data-status={status}
+                  style={getDelay(tokens.base.durationS, initDelay)}
+                  autoComplete="off"
+                  label={text.messageLabel}
+                  name="message"
+                  maxLength={MAX_MESSAGE_LENGTH}
+                  {...message}
+                />
+                <Transition
+                  unmount
+                  in={!sending && actionData?.errors}
+                  timeout={msToNum(tokens.base.durationM)}
+                >
+                  {({ status: errorStatus, nodeRef }) => (
+                    <div
+                      className={styles.formError}
+                      ref={nodeRef}
+                      data-status={errorStatus}
+                      style={cssProps({
+                        height: errorStatus ? errorRef.current?.offsetHeight : 0,
+                      })}
+                    >
+                      <div className={styles.formErrorContent} ref={errorRef}>
+                        <div className={styles.formErrorMessage}>
+                          <Icon className={styles.formErrorIcon} icon="error" />
+                          {actionData?.errors?.email}
+                          {actionData?.errors?.message}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              )}
-            </Transition>
-            <Button
-              className={styles.button}
-              data-status={status}
-              data-sending={sending}
-              style={getDelay(tokens.base.durationM, initDelay)}
-              disabled={sending}
-              loading={sending}
-              loadingText={text.sending}
-              icon="send"
-              type="submit"
-            >
-              {text.send}
-            </Button>
-          </Form>
-        )}
-      </Transition>
-      <Transition unmount in={actionData?.success}>
-        {({ status, nodeRef }) => (
-          <div className={styles.complete} aria-live="polite" ref={nodeRef}>
-            <Heading
-              level={3}
-              as="h3"
-              className={styles.completeTitle}
-              data-status={status}
-            >
-              {text.completeTitle}
-            </Heading>
-            <Text
-              size="l"
-              as="p"
-              className={styles.completeText}
-              data-status={status}
-              style={getDelay(tokens.base.durationXS)}
-            >
-              {text.completeText}
-            </Text>
-            <Button
-              secondary
-              iconHoverShift
-              className={styles.completeButton}
-              data-status={status}
-              style={getDelay(tokens.base.durationM)}
-              href="/"
-              icon="chevron-right"
-            >
-              {text.backHome}
-            </Button>
-          </div>
-        )}
-      </Transition>
+                  )}
+                </Transition>
+                <Button
+                  className={styles.button}
+                  data-status={status}
+                  data-sending={sending}
+                  style={getDelay(tokens.base.durationM, initDelay)}
+                  disabled={sending}
+                  loading={sending}
+                  loadingText={text.sending}
+                  icon="send"
+                  type="submit"
+                >
+                  {text.send}
+                </Button>
+              </Form>
+            )}
+          </Transition>
+          <Transition unmount in={actionData?.success}>
+            {({ status, nodeRef }) => (
+              <div className={styles.complete} aria-live="polite" ref={nodeRef}>
+                <Heading
+                  level={3}
+                  as="h3"
+                  className={styles.completeTitle}
+                  data-status={status}
+                >
+                  {text.completeTitle}
+                </Heading>
+                <Text
+                  size="l"
+                  as="p"
+                  className={styles.completeText}
+                  data-status={status}
+                  style={getDelay(tokens.base.durationXS)}
+                >
+                  {text.completeText}
+                </Text>
+                <Button
+                  secondary
+                  iconHoverShift
+                  className={styles.completeButton}
+                  data-status={status}
+                  style={getDelay(tokens.base.durationM)}
+                  href="/"
+                  icon="chevron-right"
+                >
+                  {text.backHome}
+                </Button>
+              </div>
+            )}
+          </Transition>
+        </div>
+      </div>
       <Footer className={styles.footer} />
     </Section>
   );

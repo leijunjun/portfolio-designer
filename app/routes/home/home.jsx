@@ -128,7 +128,7 @@ export const Home = () => {
         title={projects[1].title}
         description={projects[1].description}
         buttonText={projects[1].buttonText}
-        buttonLink="https://gamestack.hamishw.com"
+        buttonLink="/projects/volkihar-knight"
         model={{
           type: 'phone',
           alt: projects[1].modelAlt,

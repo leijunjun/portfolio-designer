@@ -43,10 +43,13 @@ import styles from './slice.module.css';
 const title = 'Biomedical image collaboration';
 const description =
   'This project involved designing a better way for biomedical educators and learners to annotate digital slides together.';
+const seoTitle = 'Biomedical Image Collaboration | UX Design Case Study';
+const seoDescription =
+  'A UX and interface design case study for collaborative biomedical image annotation, helping educators and learners work together on digital slides.';
 const roles = ['User Research', 'UX Design', 'Interface Design'];
 
 export const meta = () => {
-  return baseMeta({ title, description, prefix: 'Projects' });
+  return baseMeta({ title: seoTitle, description: seoDescription, prefix: 'Projects' });
 };
 
 export const Slice = () => {
