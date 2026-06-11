@@ -36,15 +36,24 @@ describe('i18n dictionary', () => {
   });
 
   it('exposes the Chinese homepage identity copy', () => {
-    assert.equal(getText('zh', 'intro.name'), 'HI,我是雷校长');
-    assert.equal(getText('zh', 'intro.role'), 'AI产品经理');
-    assert.deepEqual(getText('zh', 'intro.disciplines'), ['门店营销', '私域裂变增长', '全栈开发']);
+    assert.equal(getText('zh', 'intro.name'), '雷钧钧 June Ray');
+    assert.equal(getText('zh', 'intro.role'), '用 AI 连接产品、增长');
+    assert.deepEqual(getText('zh', 'intro.disciplines'), [
+      'AI 产品经理',
+      '门店营销',
+      '私域裂变增长',
+      '全栈开发',
+    ]);
   });
 
   it('exposes the English homepage identity copy', () => {
-    assert.equal(getText('en', 'intro.name'), 'known as Principal Lei');
-    assert.equal(getText('en', 'intro.role'), 'AI Product Manager');
+    assert.equal(getText('en', 'intro.name'), 'June Ray');
+    assert.equal(
+      getText('en', 'intro.role'),
+      'AI for product and growth'
+    );
     assert.deepEqual(getText('en', 'intro.disciplines'), [
+      'AI Product Manager',
       'Local Store Marketing',
       'Private Domain Referral Growth',
       'Full-Stack Development',
@@ -131,14 +140,23 @@ describe('i18n dictionary', () => {
   it('exposes localized profile paragraphs', () => {
     assert.equal(
       getText('zh', 'home.profile.paragraphs')[0],
-      'HI我是雷钧钧，网名雷校长'
+      '雷钧钧 June Ray'
+    );
+    assert.equal(
+      getText('zh', 'home.profile.paragraphs')[1],
+      'AI 产品经理 / 私域增长实践者 / AI 教育探索者'
     );
     assert.equal(
       getText('zh', 'home.profile.paragraphs')[5],
       '基于多年服务实体门店和拓客团队的经验，我正在围绕“AI 私域裂变增长”打造一套产品矩阵。'
     );
-    assert.match(getText('en', 'home.profile.paragraphs')[1], /brick-and-mortar businesses/);
-    assert.match(getText('en', 'home.profile.paragraphs')[4], /real long-term value/);
+    assert.equal(getText('en', 'home.profile.paragraphs')[0], 'June Ray');
+    assert.equal(
+      getText('en', 'home.profile.paragraphs')[1],
+      'AI Product Manager / Growth Builder / AI Education Explorer'
+    );
+    assert.match(getText('en', 'home.profile.paragraphs')[2], /brick-and-mortar businesses/);
+    assert.match(getText('en', 'home.profile.paragraphs')[5], /real long-term value/);
   });
 
   it('exposes localized domains content', () => {

@@ -50,9 +50,10 @@ export const translations = {
       contact: 'Contact',
     },
     intro: {
-      name: 'known as Principal Lei',
-      role: 'AI Product Manager',
+      name: 'June Ray',
+      role: 'AI for product and growth',
       disciplines: [
+        'AI Product Manager',
         'Local Store Marketing',
         'Private Domain Referral Growth',
         'Full-Stack Development',
@@ -122,7 +123,8 @@ export const translations = {
       profile: {
         title: 'About',
         paragraphs: [
-          'I’m Lei Junjun, a product manager who has moved from software services into hands-on AI application building.',
+          'June Ray',
+          'AI Product Manager / Growth Builder / AI Education Explorer',
           'One question has stayed at the center of my work for a long time: how can AI genuinely help brick-and-mortar businesses?',
           'Not by stopping at a few lines of copy or a few generated images, but by becoming part of the full chain of store operations, private-domain growth, campaign conversion, and team training.',
           'Drawing on years of experience serving physical stores and customer-acquisition teams, I’m building a product portfolio around AI-powered private-domain fission growth.',
@@ -319,9 +321,9 @@ export const translations = {
       contact: '联系',
     },
     intro: {
-      name: 'HI,我是雷校长',
-      role: 'AI产品经理',
-      disciplines: ['门店营销', '私域裂变增长', '全栈开发'],
+      name: '雷钧钧 June Ray',
+      role: '用 AI 连接产品、增长',
+      disciplines: ['AI 产品经理', '门店营销', '私域裂变增长', '全栈开发'],
     },
     home: {
       projects: [
@@ -385,8 +387,8 @@ export const translations = {
       profile: {
         title: '关于',
         paragraphs: [
-          'HI我是雷钧钧，网名雷校长',
-          '一名从软件服务走向 AI 应用实践的产品经理。',
+          '雷钧钧 June Ray',
+          'AI 产品经理 / 私域增长实践者 / AI 教育探索者',
           '长期关注一个问题：',
           'AI 到底怎样才能真正帮到实体商家？',
           '不是停留在写几句文案、做几张图片，而是进入门店经营、私域增长、活动成交和团队训练的完整链路。',
